@@ -46,7 +46,7 @@
                                     <div class="contact-form-warp">
 
 {#                                        <form id="contact-form" action="{% url 'contect-us' %}" method="POST">#}
-{#                                            {% csrf_token %}#}
+{#                                            {% csrf_token %}
 {#                                            <div class="row">#}
 {#                                                <div class="col-lg-6 col-md-6">#}
 {#                                                    <div class="input-box">#}
@@ -76,11 +76,13 @@
 {#                                                {{ message }}#}
 {#                                            {% endfor %}#}
 {#                                        {% endif %}#}
-                                        <form method="post">
+                                        <form id="button" method="POST">
         {% csrf_token %}
             {{form.as_p}}
             <button type="submit">Submit</button>
         </form>
+
+ 
                                     </div>
                                     <!-- contact-form-warp End -->
                                 </div>
@@ -116,5 +118,4 @@
             </div>
         </div>
     </div>
-    
 {% endblock content %}
