@@ -1,0 +1,294 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %} 
+ <!-- Hero Slider start -->
+    <div class="hero-slider hero-slider-1">
+        <div class="single-slide overly-bg-black" style="background-image: url({% static 'images/slider/1.jpg' %})">
+            <!-- Hero Content One Start -->
+            <div class="hero-content-one container">
+                <div class="row">
+                    <div class="col-lg-12 "> 
+                        <div class="slider-text-info">
+                            <h1>Expert repair <br> AC & Heating services</h1>
+                            <p>Inform, bring or send your ac, for a quick repair </p>
+                            <div class="slider-button">
+                                <a href="#" class="default-btn border-radius">About More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Content One End -->
+        </div>
+    </div>
+    <!-- Hero Slider end -->
+    
+    <!-- Our Service Area Start -->
+    <div class="our-service-area bg-grey section-pt section-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h4>WELCOME TO AIRCON</h4>
+                        <h2>Our Services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row service-slider-active">
+                {% for service in services %} 
+                <div class="col-lg-4 col-md-6">
+                    <!-- single-service Start -->
+                    <div class="single-service mt--30 mb--30">
+                        <div class="service-image">
+                            <img src="{{service.ser_image.url}}" alt="">
+                        </div>
+                        <div class="service-content text-center">
+                            <h3><a href="{% url 'single_service' %}">{{service.title}}</a></h3>
+                            <p>{{service.description}}</p>
+                            <a href="{% url 'single_service' %}">READ MORE</a>
+                        </div>
+                    </div>
+                    <!-- single-service End -->
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Our Service Area End -->
+    
+    <!-- Repair-make-area Start -->
+    <div class="repair-make-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="repair-service-inner">
+                        <h3>Heating & Air Conditioning</h3>
+                        <h2>Repair & Services</h2>
+                        <p>It is a long established fact that a reader will be distracted by the readable to
+                         content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,opposed using 'Con't here.</p>
+                        <div class="make-apoinment-button">
+                            <a href="#" class="default-btn border-radius">Make Appointment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="repair-image pt--30">
+                        <img src="{% static 'images/banner/01.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repair-make-area End -->
+    
+    <!-- Project-count-inner Start -->
+    <div class="project-count-inner bg-grey section-pb section-pt-80">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <!-- counter start -->
+                <div class="counter text-center">
+                    <h3 class="counter-active">112</h3>
+                    <p>Award Won</p>
+                </div>
+                <!-- counter end -->
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <!-- counter start -->
+                <div class="counter text-center">
+                    <h3 class="counter-active">345</h3>
+                    <p>Project Done</p>
+                </div>
+                <!-- counter end -->
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <!-- counter start --> 
+                <div class="counter text-center">
+                    <h3 class="counter-active">215</h3>
+                    <p>Satisfied Client</p>
+                </div>
+                <!-- counter end -->
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <!-- counter start -->
+                <div class="counter text-center">
+                    <h3 class="counter-active">124</h3>
+                    <p>Running Project</p>
+                </div>
+                <!-- counter start -->
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Project-count-inner End -->
+    
+
+    <!-- FAQ area Start -->
+    <div class="faq-area bg-grey section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h4>FREQUENTLY ASKED QUESTION</h4>
+                        <h2>FAQ</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <!-- single-faq Start -->
+                    <div class="single-faq text-center">
+                        <div class="title-content">
+                            <h4>Why my air conditioner is not working properly</h4>
+                            <i class="icofont-question"></i>
+                        </div>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    </div>
+                    <!-- single-faq Start -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <!-- single-faq Start -->
+                    <div class="single-faq text-center">
+                        <div class="title-content">
+                            <h4>How do i simply reset my air conditioning unit</h4>
+                            <i class="icofont-question"></i>
+                        </div>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    </div>
+                    <!-- single-faq Start -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <!-- single-faq Start -->
+                    <div class="single-faq text-center">
+                        <div class="title-content">
+                            <h4>Can i fix my air conditioner prb in  my home anyway</h4>
+                            <i class="icofont-question"></i>
+                        </div>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    </div>
+                    <!-- single-faq Start -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ area End -->
+    
+    <!-- Something New Aera Start -->
+    <div class="something-new-area something-new-bg overly-bg-black section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="something-new-inner text-center text-white">
+                        <h2>Now Time For Something New</h2>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                        <div class="contact-us-button">
+                            <a href="#" class="default-btn border-radius">Know More</a> 
+                            <a href="#" class="primary-btn border-radius">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Something New Aera End -->
+    
+    <!-- Latest News Area Start -->
+    <div class="latest-blog-news section-pt section-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h4>AIRCON NEWS</h4>
+                        <h2>Latest News</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row latest-blog-active">
+                <div class="col-lg-4">
+                    <!-- single-letest-blog Start -->
+                    <div class="single-letest-blog mt--30 mb--30">
+                        <div class="blog-image">
+                            <a href="blog-details.html"><img src="{% static 'images/blog/1.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-mata">
+                                <ul>
+                                    <li><a href="#">By  Admin</a></li>
+                                    <li>/</li>
+                                    <li>06 jun 2018</li>
+                                </ul>
+                            </div>
+                            <h3><a href="blog-details.html">Maintaince & Installation</a></h3>
+                            <p>long established fact that a reader will page when looking at its layout. </p>
+                        </div>
+                    </div>
+                    <!-- single-letest-blog End -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- single-letest-blog Start -->
+                    <div class="single-letest-blog mt--30 mb--30">
+                        <div class="blog-image">
+                            <a href="blog-details.html"><img src="{% static 'images/blog/2.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-mata">
+                                <ul>
+                                    <li><a href="#">By  Admin</a></li>
+                                    <li>/</li>
+                                    <li>23 jun 2018</li>
+                                </ul>
+                            </div>
+                            <h3><a href="blog-details.html">A/C Installation</a></h3>
+                            <p>long established fact that a reader will page when looking at its layout. </p>
+                        </div>
+                    </div>
+                    <!-- single-letest-blog End -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- single-letest-blog Start -->
+                    <div class="single-letest-blog mt--30 mb--30">
+                        <div class="blog-image">
+                            <a href="blog-details.html"><img src="{% static 'images/blog/3.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-mata">
+                                <ul>
+                                    <li><a href="#">By  Admin</a></li>
+                                    <li>/</li>
+                                    <li>30 jun 2018</li>
+                                </ul>
+                            </div>
+                            <h3><a href="blog-details.html">Optimization You AIR</a></h3>
+                            <p>long established fact that a reader will page when looking at its layout. </p>
+                        </div>
+                    </div>
+                    <!-- single-letest-blog End -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- single-letest-blog Start -->
+                    <div class="single-letest-blog mt--30 mb--30">
+                        <div class="blog-image">
+                            <a href="blog-details.html"><img src="{% static 'images/blog/6.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="post-mata">
+                                <ul>
+                                    <li><a href="#">By  Admin</a></li>
+                                    <li>/</li>
+                                    <li>30 jun 2018</li>
+                                </ul>
+                            </div>
+                            <h3><a href="blog-details.html">Cleaning & Optimization</a></h3>
+                            <p>long established fact that a reader will page when looking at its layout. </p>
+                        </div>
+                    </div>
+                    <!-- single-letest-blog End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest News Area End -->
+{% endblock content %}
+
+

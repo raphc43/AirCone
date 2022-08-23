@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %} 
+   <!-- breadcrumb-area start -->
+   <div class="breadcrumb-area section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="breadcrumb-title">Service</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Service</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+<!-- content-wraper start -->
+<div class="content-wraper section-pt section-pb-80">
+    <div class="container">
+        <div class="row">
+            {% for service  in services %}
+            <div class="col-lg-4 col-md-6">
+                <!-- single-service Start -->
+                <div class="single-service mb--30">
+                    <div class="service-image">
+                        <img src="{{service.ser_image.url}}" alt="">
+                    </div>
+                    <div class="service-content text-center">
+                        <h3><a href="{% url 'single_service' %}">{{service.title}}</a></h3>
+                        <p>{{service.description}}</p>
+                        <a href="{% url 'single_service' %}">READ MORE</a>
+                    </div>
+                </div>
+                <!-- single-service End -->
+            </div>
+            {% endfor %}
+         
+        </div>
+    </div>
+</div>
+<!-- content-wraper end -->
+
+{% endblock content %}

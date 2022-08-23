@@ -1,0 +1,82 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+   <!-- Your-opinion-area Start  -->
+    <div class="your-opinion-area overly-bg-black opinion-bg section-ptb">
+        <div class="container">
+            <div class="row">
+            <div class="form-popup" id="myForm">
+                <div class="col-lg-8 ml-auto mr-auto">
+                    <div class="your-opinion-wrap">
+                        <h2>Your Opinion</h2>
+
+                        <div class="opinion-content-inner">
+                            <form action="{% url 'Appointment' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class=" col-lg-6 col-md-6">
+                                        <div class="input-box">
+                                            <input type="text" name="name" placeholder="Your Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="input-box">
+                                            <input type="text" name="email" placeholder="Your Email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="input-box">
+                                            <input type="text" name="address" placeholder="Address" class="form-control">
+                                        </div>
+                                    </div>
+
+{#                                    <div class="col-lg-3 col-md-3 col-6">#}
+{#                                        <select aria-required="true" name="date" class="form-control selector-time-date">#}
+{#											<option value="" selected data-default>Date</option>#}
+{#											<option value="1306">13.09</option>#}
+{#											<option value="1406">14.07</option>#}
+{#											<option value="1506">15.09</option>#}
+{#											<option value="1606">16.05</option>#}
+{#											<option value="1706">17.05</option>#}
+{#											<option value="1806">18.07</option>#}
+{#											<option value="1906">19.08</option>#}
+{#											<option value="2006">20.04</option>#}
+{#										</select>#}
+{#                                    </div>#}
+{#                                    <div class="col-lg-3 col-md-3 col-6">#}
+{#                                        <select aria-required="true" name="time" class="form-control selector-time-date">#}
+{#											<option value="" selected data-default>Time</option>#}
+{#											<option value="09:00am">07:00:00 AM</option>#}
+{#											<option value="10:00am">10:00 AM</option>#}
+{#											<option value="11:00am">11:00 AM</option>#}
+{#											<option value="12:00am">12:00 PM</option>#}
+{#											<option value="13:00pm">13:00 PM</option>#}
+{#											<option value="14:00pm">14:00 PM</option>#}
+{#											<option value="15:00pm">15:00 PM</option>#}
+{#											<option value="16:00pm">16:00 PM</option>#}
+{#											<option value="17:00pm">17:00 PM</option>#}
+{#										</select>#}
+{#                                    </div>#}
+                                    <div class="col-lg-12 col-md-12">
+                                        <textarea  placeholder="Message" name="message" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="submit-box text-center">
+                                            <button class="default-btn border-radius" type="submit">Send Opinion</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            {% include 'includes/messages.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Your-opinion-area End  -->
+
+
+{% endblock content %}
