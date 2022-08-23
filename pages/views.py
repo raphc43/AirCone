@@ -6,11 +6,9 @@ from .models import Service, Team, Contect
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .forms import ContactForm
-from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm, AppointmentForm
-from django.core.mail import send_mail
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import EmailMessage, BadHeaderError
 from django.http import HttpResponse
 
 
@@ -81,14 +79,18 @@ def Contect_us(request):
                 form.save()
 
                 try:
-                    send_mail(subject, message, 'muneeb9166@gmail.com', ['muneeb9166@gmail.com'])
+                    msg = EmailMessage('heading',
+                       'Here is the message.', to=['darkslider345@gmail.com'])
+                    msg.send()
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
-                return redirect("/")
+
+                # Success message
+                messages.add_message(request, messages.SUCCESS, 'Contact details sent successfully!')
+                return render(request, 'pages/success_message.html')
 
         form = ContactForm()
         return render(request, 'pages/contect.html', {'form': form})
-
 
 
     # if request.method == 'POST':
