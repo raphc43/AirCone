@@ -70,17 +70,12 @@ def Contect_us(request):
             form = ContactForm(request.POST)
             if form.is_valid():
                 subject = "Website Inquiry"
-                body = {
-                    'name': form.cleaned_data['name'],
-                    'email': form.cleaned_data['email'],
-                    'message': form.cleaned_data['message'],
-                }
-                message = "\n".join(body.values())
+                body = f"name: {form.cleaned_data['name']}\nemail: {form.cleaned_data['email']}\nmessage: {form.cleaned_data['message']}"
                 form.save()
 
                 try:
                     msg = EmailMessage('heading',
-                       'Here is the message.', to=['darkslider345@gmail.com'])
+                       body, to=['muneeb9166@gmail.com'])
                     msg.send()
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
