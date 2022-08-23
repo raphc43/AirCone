@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+    <!-- breadcrumb-area start -->
+    <div  class="breadcrumb-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="breadcrumb-title">
+                    	{% if messages %}
+						<ul class="messages">
+ 							{% for msg in messages %}
+ 							<li>	
+ 								<div class="alert alert-{{msg.level_tag}}" role="alert">
+ 								{{msg.message}}
+ 								</div>
+ 							</li>
+ 							{% endfor %}
+						</ul>
+						{% endif %}
+                    </h2>
+                    <!-- breadcrumb-list start -->
+                    <ul class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Contact Us</li>
+                    </ul>
+                    <!-- breadcrumb-list end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb-area end -->
+<script>
+	//redirecting to home page after a timeout
+	setTimeout(function() {
+		window.location.href ="{% url 'home' %}";
+	}, 3000);
+</script>
+{% endblock content %}
